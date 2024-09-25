@@ -15,6 +15,7 @@ ip_addres = socket.gethostbyname(hostname)
 request_url = 'https:geolocation-db.com/jsonp/' + ip_addres
 response = request.get(request_url)
 geolocation = response.content.decode()
+# geolocation = response.content.decode(dec)
 geolocation = geolocation.split("(")[1].strip("(")
 geolocation = json.loads(geolocation)
 for k,v in geolocation.items():
